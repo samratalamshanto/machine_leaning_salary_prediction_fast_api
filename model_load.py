@@ -23,8 +23,8 @@ def predict_data(edu_category, country_category, years_of_exp):
         X_test = np.array([[edu_category, country_category, years_of_exp]])
 
         # Transform categorical inputs
-        X_test[:, 0] = encdr_education.transform([edu_category])  # Transform as a list
-        X_test[:, 1] = encdr_country.transform([country_category])  # Transform as a list
+        X_test[:, 0] = encdr_education.transform([edu_category])
+        X_test[:, 1] = encdr_country.transform([country_category])
         X_test = X_test.astype(float)
 
         y_test_pred = reg_model.predict(X_test)
