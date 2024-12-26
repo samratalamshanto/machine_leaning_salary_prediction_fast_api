@@ -1,7 +1,12 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 from model_load import predict_data
 
+class ReqDTO(BaseModel):
+    education: str
+    country: str
+    experience: float
 
 app = FastAPI()
 
@@ -13,3 +18,11 @@ def greet():
 def getPrediction():
     salary= predict_data("Master’s degree", "Germany", 15)
     return {"salary":salary}
+
+@app.post("/predict")
+def getPrediction(reqDto: ReqDTO):
+    salary= predict_data(reqDto.education, reqDto.country, reqDto.experience);
+    return {"salary":salary}
+
+
+# uvicorn main:app --reload --port=8000 --host=0.0.0.0
