@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 
-def load_model_data(file_path='pickle_models\saved_model.pkl'):
+def load_model_data(file_path='.\pickle_models\saved_model.pkl'):
     try:
         with open(file_path, 'rb') as file:
             data = pickle.load(file)

@@ -1,0 +1,6 @@
+services:
+  web-fast-api:
+    build: .
+    ports:
+      - 8000:8000
+    command: sh -c "uvicorn main:app --reload --port=8000 --host=0.0.0.0"
