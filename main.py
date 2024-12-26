@@ -21,8 +21,5 @@ def getPrediction():
 
 @app.post("/predict")
 def getPrediction(reqDto: ReqDTO):
-    salary= predict_data(reqDto.education, reqDto.country, reqDto.experience);
+    salary= predict_data(reqDto.education, reqDto.country, reqDto.experience)
     return {"salary":salary}
-
-
-# uvicorn main:app --reload --port=8000 --host=0.0.0.0
