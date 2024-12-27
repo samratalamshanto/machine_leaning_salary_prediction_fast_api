@@ -21,7 +21,7 @@ app.add_middleware(
 
 @app.get("/")
 def greet():
-    return {"msg":"hello world"}
+    return {"msg":"hello world. Welcome to salary prediction Live application...."}
 
 @app.get("/predict")
 def getPrediction():

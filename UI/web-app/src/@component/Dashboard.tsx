@@ -10,7 +10,7 @@ const Dashboard = () => {
 
     const [reqData, setReqData] = useState<IReqDto>({ education: "", country: "", experience: 1 });
     const [salary, setSalary] = useState(0);
-    const baseUrl = "http://localhost:8000";
+    const baseUrl = "https://machine-leaning-salary-prediction-fast.onrender.com/";
 
     const postData = () => {
         axios.post(baseUrl + '/predict', reqData)
