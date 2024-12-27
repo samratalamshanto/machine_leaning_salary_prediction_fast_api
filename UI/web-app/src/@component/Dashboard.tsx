@@ -8,13 +8,11 @@ const Dashboard = () => {
 
     const [reqData, setReqData] = useState<IReqDto>({ education: "", country: "", experience: 1 });
     const [salary, setSalary] = useState(null);
-    const baseUrl = "https://machine-leaning-salary-prediction-fast.onrender.com";
+    const baseUrl = process.env.REACT_APP_baseUrl;
 
     const postData = () => {
         axios.post(baseUrl + '/predict', reqData)
             .then(function (response: any) {
-                debugger;
-                console.log(response);
                 setSalary(response?.data?.salary.toFixed(4));
             })
             .catch(function (error: any) {
@@ -102,13 +100,37 @@ const Dashboard = () => {
 
                                 {salary !== null && (
                                     <div className="mt-4 text-center">
-                                        <h3 className="text-success">Predicted Salary: ${salary}</h3>
+                                        <h3 className="text-success">Predicted Salary: <b>${salary}</b>/year</h3>
                                     </div>
                                 )}
                             </Card.Body>
                         </Card>
                     </Col>
                 </Row>
+
+
+                <Row className="justify-content-center mt-4">
+                    <Col md={8} lg={6}>
+                        <div className="text-center">
+                            <p>Check out the project on GitHub:<span> </span>
+                                <a href="https://github.com/samratalamshanto/machine_leaning_salary_prediction_fast_api" target="_blank" rel="noopener noreferrer">
+                                    GitHub Repository
+                                </a>
+                            </p>
+                            <p>Dataset used for model training:<span> </span>
+                                <a href="https://survey.stackoverflow.co/" target="_blank" rel="noopener noreferrer">
+                                    Stackoverflow Survey Dataset Link
+                                </a>
+                            </p>
+                            <p>Model notebook:<span> </span>
+                                <a href="https://github.com/samratalamshanto/machine_leaning_salary_prediction_fast_api/blob/main/pickle_models/Predict_Salary.ipynb" target="_blank" rel="noopener noreferrer">
+                                    Notebook Link
+                                </a>
+                            </p>
+                        </div>
+                    </Col>
+                </Row>
+
             </Container>
         </>
     );

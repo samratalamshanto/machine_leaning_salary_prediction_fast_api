@@ -6,7 +6,7 @@ const NavbarComponent = () => {
         <>
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">Salary Prediction App</Navbar.Brand>
+                    <Navbar.Brand href="#home"><b>Salary Prediction App</b></Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="navbar-nav" />
 
