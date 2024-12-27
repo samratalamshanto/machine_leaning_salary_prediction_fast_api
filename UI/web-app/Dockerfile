@@ -7,7 +7,7 @@ ENV REACT_APP_baseUrl=$REACT_APP_baseUrl
 EXPOSE 3000
 
 WORKDIR /react-app
-COPY ./package*.json /react-app
+COPY  ./UI/web-app/package*.json /react-app
 RUN npm install
 
 COPY . .
