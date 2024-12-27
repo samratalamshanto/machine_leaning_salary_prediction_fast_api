@@ -10,14 +10,14 @@ const Dashboard = () => {
 
     const [reqData, setReqData] = useState<IReqDto>({ education: "", country: "", experience: 1 });
     const [salary, setSalary] = useState(0);
+    const baseUrl = "http://localhost:8000";
 
     const postData = () => {
-        setSalary(0);
-        console.log(reqData);
-        debugger
-        axios.post('/predict', reqData)
+        axios.post(baseUrl + '/predict', reqData)
             .then(function (response: any) {
+                debugger;
                 console.log(response);
+                setSalary(response?.data?.salary);
             })
             .catch(function (error: any) {
                 console.log(error);
@@ -26,6 +26,7 @@ const Dashboard = () => {
 
     const resetData = () => {
         setReqData({ education: "", country: "", experience: 1 });
+        setSalary(0);
     }
 
     const handleChange = (e: any) => {
@@ -75,7 +76,7 @@ const Dashboard = () => {
                             Reset
                         </Button>
                     </Form>
-                    <h1>Salary is: {salary}</h1>
+                    <h1>Salary is: {salary}$</h1>
                 </Card.Body>
             </Card>
 
