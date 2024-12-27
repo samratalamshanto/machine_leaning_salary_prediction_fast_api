@@ -1,20 +1,32 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 
 const NavbarComponent = () => {
     return (
         <>
-            <Navbar bg="dark" data-bs-theme="dark">
+            <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">Salary Prediction App</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        {/* <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link> */}
-                    </Nav>
+
+                    <Navbar.Toggle aria-controls="navbar-nav" />
+
+
+                    <Navbar.Collapse id="navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link href="#home">Home</Nav.Link>
+
+                            <NavDropdown title="About" id="navbar-dropdown">
+                                <NavDropdown.Item href="#features">Features</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#contact">Contact</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+
+                        <Nav>
+                            <Nav.Link href="#login">Login</Nav.Link>
+                            <Nav.Link href="#signup">Sign Up</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </>
