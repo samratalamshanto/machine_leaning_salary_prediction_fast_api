@@ -1,2 +1,0 @@
-# react_salary_prediction_ui_fast_api
-react_salary_prediction_ui_fast_api
