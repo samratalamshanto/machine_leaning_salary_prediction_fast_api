@@ -10,5 +10,5 @@ WORKDIR /react-app
 COPY  ./UI/web-app/package*.json /react-app
 RUN npm install
 
-COPY . .
+COPY ./UI/web-app/ .
 CMD ["npm","start"]
