@@ -6,3 +6,42 @@ uvicorn main:app --reload --port=8000 --host=0.0.0.0
 Key Points:
 1. Allowing cors origin in backend fastapi. In docker pickle file not found in the separate folder.
 2. Deploying react-app on the onrender, need to deploy using npm install command, then npm start and must define the PORT in the environment.
+
+
+"scripts": {
+  "start": "serve -s build -l $PORT", /* This ensures that your React app is being served from the build directory, and it binds to the dynamic PORT that Render provides. */
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+}
+
+npm install && npm run build--> build command
+serve -s build -l $PORT --> start command
+
+--> crucial to bind your server to the dynamically assigned port. 
+--> "npm start", the typical issue here is that the development server (react-scripts start) may not be properly configured to listen on the dynamic port provided by Render.
+-->Your current scripts section in package.json is typical for a development environment with Create React App (CRA), but for production deployment on Render, the start script needs to be updated to use a static file server instead of the default react-scripts start, which is meant for development
+-->react-scripts start: This starts the development server, which is fine for local development but not suitable for production. It listens on port 3000 by default, and Render dynamically assigns ports, which react-scripts doesn't handle properly for production.
+-->Using serve: In production, you want to build your React app and then serve it using a static file server, such as serve. This ensures that your app is optimized and can be served on the dynamically assigned port Render provides.
+
+Solution:
+Modify your scripts section to look like this:
+
+json
+Copy code
+"scripts": {
+  "start": "serve -s build -l $PORT",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+}
+Here’s the breakdown:
+
+start: Uses serve to serve the production build (build/ directory) on the port specified by Render ($PORT environment variable).
+build: This command builds the production version of your app (using react-scripts build).
+test and eject: These remain unchanged and are used for testing and ejecting the CRA configuration if needed.
+
+npm install && npm run build
+Explanation:
+npm install: This installs all the dependencies listed in your package.json, including react-scripts, serve, and any other necessary packages.
+npm run build: This runs the build script, which creates an optimized production version of your app inside the build/ directory.
