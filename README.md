@@ -1,5 +1,5 @@
 # Salary Prediction using Machine Learning Models
-Model Trained and then exposed endpoints using FastAPI to predict salary based on the trained model. Then created a User Interface using React and deployed to the live server.
+Model Trained and then exposed endpoints using FastAPI to predict salary based on the trained model. Then created a User Interface using React and deployed to the live server using Docker image.
 
 ## Live URLS:
   1. **Fast API Backend Service URL**: https://machine-leaning-salary-prediction-fast.onrender.com/
@@ -14,6 +14,7 @@ Model Trained and then exposed endpoints using FastAPI to predict salary based o
 1. Machine Learning Model Trained using Public Dataset.
 2. FastAPI for creating endpoints for predicting salary using a trained model.
 3. React is used to create a user interface.
+4. Create Docker image for both backend and frontend.
 
 ## Repository URL:
 1. Backend **FastAPI** Repository: [Link](https://github.com/samratalamshanto/machine_leaning_salary_prediction_fast_api)
