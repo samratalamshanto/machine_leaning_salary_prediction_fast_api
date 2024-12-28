@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69d3df66-2a93-490a-b74f-9ac939d8866f" name="Changes" comment="" />
+    <list default="true" id="69d3df66-2a93-490a-b74f-9ac939d8866f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Desktop Shortcut/ML/Salary Prediction StackOverFlowSurveyData/FastAPI/UI/web-app",
+    "last_opened_file_path": "E:/Desktop Shortcut/ML/Salary Prediction StackOverFlowSurveyData/FastAPI",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -141,6 +143,7 @@
       <workItem from="1735271139957" duration="452000" />
       <workItem from="1735271610816" duration="15000" />
       <workItem from="1735288645817" duration="58000" />
+      <workItem from="1735359854311" duration="550000" />
     </task>
     <servers />
   </component>
