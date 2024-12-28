@@ -10,7 +10,8 @@
 
   2. **Frontend React URL**: https://salary-prediction-frontend-react-new.onrender.com/
      
-![image](https://github.com/user-attachments/assets/31aee787-441b-489c-bd91-aa8b417683eb)
+![image](https://github.com/user-attachments/assets/1ce9b437-dd6a-4d5a-9a20-f3af92201f9b)
+
 
 ## Key Points:
 1. Machine Learning Model Trained using Public Dataset.
