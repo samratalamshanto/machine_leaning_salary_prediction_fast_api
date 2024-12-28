@@ -1,3 +1,8 @@
 pip freeze > requirement1.txt
 
 uvicorn main:app --reload --port=8000 --host=0.0.0.0
+
+
+Key Points:
+1. Allowing cors origin in backend fastapi. In docker pickle file not found in the separate folder.
+2. Deploying react-app on the onrender, need to deploy using npm install command, then npm start and must define the PORT in the environment.
